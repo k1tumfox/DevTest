@@ -1,9 +1,12 @@
 export function isValidWalk(walk: string[]) {
+  
+  // counts instances of directions, to end up at same location the number of 'n' should equal 's', same applies for 'e' and 'w'
   const nCount = walk.filter(path => path === 'n').length;
   const sCount = walk.filter(path => path === 's').length;
   const eCount = walk.filter(path => path === 'e').length;
   const wCount = walk.filter(path => path === 'w').length;
 
+  // makes comparison to check walker returns to same location, see above comment
   if (walk.length === 10 && nCount === sCount && eCount === wCount) {
     
     return true;
